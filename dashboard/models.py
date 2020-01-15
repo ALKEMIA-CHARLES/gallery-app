@@ -37,6 +37,14 @@ class Images(models.Model):
         return self.image_name
     def save_image(self): 
         return self.save()
+    def get_remote_image(self):
+        if self.image_url and not self.image:
+            result = request.urlretrieve(self.image_url)
+        self.image.save(
+                os.path.basename(self.image_url),
+                File(open(result[0], 'rb'))
+                )
+        self.save()
     def admin_image(self):
         return '<img src="%s"/>' % self.image
     admin_image.allow_tags = True

@@ -2,8 +2,8 @@ from django.shortcuts import render , redirect
 from dashboard.models import Images, Location, Category
 # Create your views here.
 def index(request):
-    image = Images.objects.all()
-    return render(request, "dashboard/index.html", context={"image":image})
+    images = Images.show_images()
+    return render(request, "dashboard/index.html", context={"images":images})
 
 def search(request):
     if request.method == "GET":
