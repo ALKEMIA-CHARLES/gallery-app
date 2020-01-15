@@ -7,10 +7,6 @@ body {
     font-family: 'Lateef', cursive;
 }
 
-.jumbotron {
-    background: #fff;
-}
-
 button:focus {
     outline: 0;
 }
