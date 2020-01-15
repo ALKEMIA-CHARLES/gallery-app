@@ -31,12 +31,15 @@ class Images(models.Model):
     image_category = models.ManyToManyField(Category)
     image_location = models.ForeignKey(Location, on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
-
+    image_url = models.URLField(max_length=250)
 
     def __str__(self):
         return self.image_name
     def save_image(self): 
         return self.save()
+    def admin_image(self):
+        return '<img src="%s"/>' % self.image
+    admin_image.allow_tags = True
     @classmethod
     def copy_url(cls,id):
         image = cls.objects.get(id=id)
