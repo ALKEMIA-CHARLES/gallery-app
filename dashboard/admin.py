@@ -3,7 +3,7 @@ from .models import Images, Location, Category
 
 
 class ImageAdmin(admin.ModelAdmin):
-    filter_horizontal =('image_category',)
+    filter_horizontal =('categories',)
     list_display = ('image_url','admin_image')
 # Register your models here.
 admin.site.register(Location)

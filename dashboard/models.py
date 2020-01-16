@@ -3,12 +3,12 @@ from pyuploadcare.dj.forms import ImageField
 import pyperclip
 # Create your models here.
 class Category(models.Model):
-    category_name = models.CharField(max_length=25)
-    category_description = models.CharField(max_length=25)
+    name = models.CharField(max_length=25)
+    description = models.CharField(max_length=25)
 
 
     def __str__(self):
-        return self.category_name
+        return self.name
     
     def save_catgeory(self):
         return self.save()
@@ -28,8 +28,8 @@ class Images(models.Model):
     image = ImageField(manual_crop="700x700")
     image_name= models.CharField(max_length=100)
     image_descrition = models.CharField(max_length=100)
-    image_category = models.ManyToManyField(Category)
-    image_location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category, related_name='threads')
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
     image_url = models.URLField(max_length=250)
 
@@ -60,10 +60,10 @@ class Images(models.Model):
         return cls.objects.order_by("post_date")[::1]
     @classmethod
     def filter_by_location(cls,id):
-        return cls.objects.filter(location__id=id)
+        return cls.objects.filter(location_id=id)
     @classmethod
     def get_image_by_id(cls, id):
         return cls.objects.filter(id=id)[0]
     @classmethod
     def search_image_by_category(cls,search):
-        return cls.objects.filter(categories=search)
+        return cls.objects.filter(categories__name__icontains=search)
