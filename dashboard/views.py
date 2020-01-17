@@ -7,7 +7,7 @@ def index(request):
 
 def search(request):
     if request.method == "GET":
-        search_term = request.GET.get("search", None)
+        search_term = request.GET.get("search")
         searched_images = Images.search_image_by_category(search_term)
         results = len(searched_images)
         message = "{}".format(search_term)
@@ -18,6 +18,14 @@ def search(request):
     else:
         message = "You have not searched for any photo"
         return render(request, "dashboard/index.html", context={"message":message})
+
+def scroll(request):
+    images = Images.show_images()
+    locations = Location.objects.all()
+    return render(request, "dashboard/scroll.html", context={"images":images,
+                                                           "locations":locations})
+
+
 def location_filter(request, id):
     images = Images.objects.filter(location__id = id)
     results = len(images)
@@ -26,10 +34,4 @@ def location_filter(request, id):
 
     return render(request, "dashboard/location.html", context={"images":images,
                                                              "results":results,
-                                                             "location":location,
-                                                             "locations":locations})
-def scroll(request):
-    images = Images.show_all_photos()
-    locations = Location.objects.all()
-    return render(request, "dashboard/scroll.html", context={"images":images,
-                                                           "locations":locations})
+                                                             "location":location})

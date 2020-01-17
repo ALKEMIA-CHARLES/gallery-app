@@ -60,7 +60,7 @@ class Images(models.Model):
         return cls.objects.order_by("post_date")[::1]
     @classmethod
     def filter_by_location(cls,id):
-        return cls.objects.filter(location_id=id)
+        return cls.objects.filter(location__id=id)
     @classmethod
     def get_image_by_id(cls, id):
         return cls.objects.filter(id=id)[0]
