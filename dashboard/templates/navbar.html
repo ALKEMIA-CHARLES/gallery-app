@@ -1,9 +1,11 @@
 <header>
     <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Gallery</h4>
-                <span class="text-muted">WELCOME TO THE BEST TRAVEL WEBSITE IN THE WORLD</span>
+        <div class="collapse" id="navbarToggleExternalContent" style="background-color: coral;">
+            <div class="bg-dark p-4" style="background-color: coral;">
+                <h4 class="text-white" style=" font-family: 'Dancing Script', cursive;  ">Gallery</h4>
+                <span class="text-muted" style=" font-family: 'Dancing Script', cursive; color: black;">WELCOME TO THE
+                    BEST TRAVEL
+                    WEBSITE IN THE WORLD</span>
             </div>
         </div>
         <nav class="navbar navbar-dark bg-dark">
@@ -18,27 +20,33 @@
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="background-color: coral;">
 
-                <form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0">
-                    <input  name="search" class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Category</button>
+                <form action="{% url 'search' %}" method="GET" class="form-inline my-2 my-lg-0"
+                    style="background-color: coral;">
+                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Travel, food, etc"
+                        aria-label="Search" style="background-color: coral; font-family: 'Dancing Script', cursive; ">
+                    <button class="btn btn-dark" type="submit" style=" font-family: 'Dancing Script', cursive;  ">Search
+                        Category</button>
                 </form>
             </div>
         </nav>
         <div class="col-sm-4 offset-md-1 py-4">
-                <li><a style="color: #333;" class="links" href="{% url 'scroll'%}">Scroll through Images and see Location</a></li>
-                <div class="dropdown-divider"></div>
+            <li style=" font-family: 'Dancing Script', cursive;  "><a style="color: #333;" class="links"
+                    href="{% url 'scroll'%}" style="font-family: 'Dancing Script', cursive;">Scroll through Images and
+                    see Location</a>
+            </li>
+            <div class="dropdown-divider"></div>
         </div>
-        <div class="navbar navbar-light bg-light sticky-top p-3 mb-4 bg-white rounded no-radius">
-            <div class="container d-flex justify-content-between">
+        <div class="navbar navbar-light bg-light sticky-top p-3 rounded no-radius" style="background-color: coral;">
+            <div class="container d-flex justify-content-between" style="background-color: coral;">
                 <a href="/" class="mx-auto navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
                         viewBox="0 0 24 24" focusable="false">
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                         <circle cx="12" cy="13" r="4" /></svg>
-                    <h1 class="text-center my-2 head">Gallery</h1>
+                    <h1 class="text-center my-2 head" style="font-family: 'Dancing Script', cursive;">Gallery</h1>
                 </a>
                 <!-- <button class="navbar-toggler no-border no-radius" type="button" data-toggle="collapse"
                     data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"

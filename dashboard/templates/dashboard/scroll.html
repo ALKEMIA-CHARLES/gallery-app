@@ -3,11 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <h2>Locations</h2>
+            <h2 style=" font-family: 'Dancing Script', cursive; ">Locations</h2>
             <div class="list-group">
                 {%for location in locations%}
                 <a href="{% url 'location' location.id%}"
-                    class="list-group-item list-group-item-action locale">{{location.city}}, {{location.country}}</a>
+                    class="list-group-item list-group-item-action locale" style=" font-family: 'Dancing Script',
+                    cursive; background-color: coral; " >{{location.city}}, {{location.country}}</a>
                 {%endfor%}
             </div>
         </div>
