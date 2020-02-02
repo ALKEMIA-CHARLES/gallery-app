@@ -2,9 +2,11 @@
 {%block content%}
 <div class="container">
     {%if results == 1%}
-    <h2 class="text-center">{{results}} photo taken in {{location.city}}, {{location.country}}</h2>
+    <h2 class="text-center" style="color: white;">{{results}} photo taken in {{location.city}}, {{location.country}}
+    </h2>
     {%else%}
-    <h2 class="text-center">{{results}} photos taken in {{location.city}}, {{location.country}}</h2>
+    <h2 class="text-center" style="font-family: 'Dancing Script', cursive; color: white;">{{results}} photos taken in
+        {{location.city}}, {{location.country}}</h2>
     {%endif%}
     <hr class="style-one">
 </div>
@@ -12,9 +14,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3" style=" font-family: 'Dancing Script', cursive;  ">
-            <h2 style=" font-family: 'Dancing Script', cursive;  ">Locations</h2>
-            <div class="list-group">
+        <div class="col-lg-3" style=" font-family: 'Dancing Script', cursive; color: white;">
+            <h2 style="font-family: 'Dancing Script', cursive; color: white; ">Locations</h2>
+            <div class="list-group" style="color: white; font-family: 'Dancing Script', cursive;">
                 {%for location in locations%}
                 <a href="{% url 'location' location.id%}"
                     class="list-group-item list-group-item-action locale">{{location.city}}, {{location.country}}</a>
@@ -26,7 +28,8 @@
                 <div class="container">
                     <div class="row no-gutters">
                         {%for image in images%}
-                        <div class="col-md-6 item zoom-on-hover">
+                        <div class="col-md-6 item zoom-on-hover"
+                            style="color: white; font-family: 'Dancing Script', cursive;">
                             <a class="lightbox" href="{{image.image_url}}"
                                 data-caption="{{image.image_name}}: {{image.image_description}}">
                                 <img class="img-fluid image" src="{{image.image_url}}">
