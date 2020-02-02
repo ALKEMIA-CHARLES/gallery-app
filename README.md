@@ -1,5 +1,5 @@
 ### PROJECT NAME
-* PERSONAL GALLERY PROJECT
+* Gallery Show PROJECT
 ### AUTHOR NAME
 * Charles Mtawali Jr
 ### PROJECT DESCRIPTION
@@ -7,7 +7,7 @@
 
 Navigation pages include:
 
-### Gallery Home Page_
+### Gallery Show Home Page_
 
 ### Consists of a display of all photos
 * Search results page
@@ -44,8 +44,8 @@ Navigation pages include:
 * Browse through the photos
 * Search by category or filter by location
 * Click desired photo to view further details
-##TECHNOLOGIES USED
 
+### TECHNOLOGIES USED
 
 * Python
 
@@ -58,6 +58,9 @@ Navigation pages include:
 * Django version 1.11
 
 * _django-bootstrap4
+
+### Known Bugs
+* Could not copy URLS.
 
 ### DEPLOYMENT 
 * Heroku
