@@ -16,7 +16,7 @@ def search(request):
                                                             "images":searched_images,
                                                             "results":results})
     else:
-        message = "You have not searched for any photo"
+        message = "You have not searched for any photo, please try again"
         return render(request, "dashboard/index.html", context={"message":message})
 
 def scroll(request):
