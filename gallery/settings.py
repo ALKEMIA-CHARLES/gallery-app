@@ -25,7 +25,7 @@ SECRET_KEY = '@ua-e-2=l9=vm#t597zx-f-xywv==vm$j-(q11=(ca_nr#zhk1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
